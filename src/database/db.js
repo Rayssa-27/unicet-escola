@@ -15,6 +15,15 @@ db.serialize(() => {
       telefone TEXT
     )
   `);
+
+  db.run(`
+    CREATE TABLE IF NOT EXISTS cursos (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      nome TEXT NOT NULL,
+      cargaHoraria INTEGER,
+      turno TEXT
+    )
+  `);
 });
 
 module.exports = db;
